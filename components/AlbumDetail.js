@@ -1,10 +1,12 @@
-import React from 'react';
-import {Text, View, Image, Linking} from 'react-native';
-import Card from './Card';
-import CardSection from './CardSection';
-import Button from './Button';
+import React from "react";
+import { Text, View, Image, Linking } from "react-native";
+import Card from "./Card";
+import CardSection from "./CardSection";
+import Button from "./Button";
+import { Icon } from "react-native-elements";
 
-const AlbumDetail = ({navigation, title, albumId}) => {
+
+const AlbumDetail = ({ navigation, title, albumId }) => {
   const {
     headerContentStyle,
 
@@ -18,11 +20,14 @@ const AlbumDetail = ({navigation, title, albumId}) => {
         <View style={headerContentStyle}>
           <Text style={headerTextStyle}>{title}</Text>
         </View>
+        <Icon style={styles.icon} name="collections" color="#c1c1c1" size="20" />
+
       </CardSection>
 
       <CardSection>
         <Button
-          onPress={() => navigation.navigate('photoList', {albumId: albumId})}>
+          onPress={() => navigation.navigate("photoList", { albumId: albumId })}
+        >
           See Now
         </Button>
       </CardSection>
@@ -32,19 +37,22 @@ const AlbumDetail = ({navigation, title, albumId}) => {
 
 const styles = {
   headerContentStyle: {
-    flexDirection: 'column',
-    justifyContent: 'center',
+    flexDirection: "column",
+    justifyContent: "center",
   },
   headerTextStyle: {
-    fontSize: 18,
+    fontSize: 20,
+    margin: 10,
+    fontWeight: 'bold'
+
   },
   thumbnailStyle: {
     height: 50,
     width: 50,
   },
   thumbnailContainerStyle: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginLeft: 10,
     marginRight: 10,
   },
